@@ -53,7 +53,7 @@ func processSTDERR(cmd *exec.Cmd) {
 	}
 
 	// fmt.Println("STDERR:", string(buf[:n]))
-	fmt.Println(string(buf[:n]))
+	fmt.Print(string(buf[:n]))
 
 	if err := cmd.Wait(); err != nil {
 		fmt.Println("Command finished with error:", err)
@@ -68,6 +68,6 @@ func processEcho(cmd *exec.Cmd) {
 		os.Exit(1)
 	}
 
-	fmt.Println(string(output))
+	fmt.Print(string(output))
 	// fmt.Println("Output: ", string(output))
 }
