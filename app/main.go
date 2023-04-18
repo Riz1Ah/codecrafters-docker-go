@@ -32,6 +32,12 @@ func main() {
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 
+	err := cmd.Run()
+	if err != nil {
+		fmt.Printf("Err: %v", err)
+		os.Exit(1)
+	}
+
 }
 
 func processSTDERR(cmd *exec.Cmd) {
