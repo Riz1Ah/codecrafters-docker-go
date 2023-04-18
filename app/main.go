@@ -68,6 +68,6 @@ func processEcho(cmd *exec.Cmd) {
 		os.Exit(1)
 	}
 
-	fmt.Print(string(output))
+	fmt.Printf(string(output))
 	// fmt.Println("Output: ", string(output))
 }
