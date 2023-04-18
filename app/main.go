@@ -22,13 +22,15 @@ func main() {
 	cmd := exec.Command(command, args...)
 	// fmt.Println("CMD:", cmd)
 
-	if args[0] == "echo_stderr" {
-		processSTDERR(cmd)
-	}
+	// if args[0] == "echo_stderr" {
+	// 	processSTDERR(cmd)
+	// }
 
-	if args[0] == "echo" {
-		processEcho(cmd)
-	}
+	// if args[0] == "echo" {
+	// 	processEcho(cmd)
+	// }
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
 
 }
 
