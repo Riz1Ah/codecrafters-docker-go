@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"strconv"
+
 	// Uncomment this block to pass the first stage!
 	"os"
 	"os/exec"
@@ -34,7 +36,14 @@ func main() {
 
 	err := cmd.Run()
 	if err != nil {
-		fmt.Printf("Err: %v", err)
+		fmt.Printf("Error: %v", err)
+		if args[0] == "exit" {
+			code, e := strconv.Atoi(args[1])
+			if e != nil {
+				fmt.Println("Invalid exit code")
+			}
+			os.Exit(code)
+		}
 		os.Exit(1)
 	}
 
